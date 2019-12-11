@@ -21,12 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function() {
 
-    Route::get('regular', function() {
-        return view(view: 'regular');
-    });
 
-    Route::get('secret', function() {
-        return view(view: 'secret');
-    })->middleware('password.confirm');
 
 });
